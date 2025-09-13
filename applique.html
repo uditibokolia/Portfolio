@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divyam Mehta</title>
+
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: white;
+      color: red;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 35px;
+      width: 100%;
+      font-size: 12px;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+      background: white;
+      margin-top: 10px;
+    }
+
+    .logo a {
+      font-weight: 600;
+      margin-left: 200px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      margin-right: 200px;
+    }
+
+    .main-content-wrapper {
+      flex: 1;
+      background: url('ap.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    .main-content {
+      display: flex;
+      max-width: 1400px;
+      width: 90%;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Slider */
+    .slider-wrapper {
+      width: 50%;
+      max-height: 600px;
+      position: relative;
+    }
+
+    .slider {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right square image */
+    .image-wrapper {
+      width: 50%;
+      max-width: 500px;
+      aspect-ratio: 1 / 1;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Arrows */
+    .custom-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .prev-arrow {
+      left: 10px;
+    }
+
+    .next-arrow {
+      right: 10px;
+    }
+
+    footer {
+      background-color: white;
+      color: red;
+      font-size: 12px;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footer-left {
+      margin-left: 200px;
+    }
+
+    .footer-right {
+      margin-right: 200px;
+    }
+
+    footer a {
+      font-weight: 600;
+    }
+
+    footer a:hover,
+    nav a:hover,
+    .logo a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      .slider-wrapper, .image-wrapper {
+        width: 100%;
+      }
+
+      .top-banner, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .logo, .footer-left, .footer-right, nav {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <div class="logo"><a href="portfolio.html">uditi bokolia</a></div>
+    <nav>
+      <a href="./images/textlieportfolio.pdf">textile</a>
+      <a href="projects.html">projects</a>
+    </nav>
+  </div>
+
+  <!-- Main Content with Background -->
+  <div class="main-content-wrapper">
+    <div class="main-content">
+      <!-- Slider Left -->
+      <div class="slider-wrapper">
+        <button class="custom-arrow prev-arrow">&lt;</button>
+        <button class="custom-arrow next-arrow">&gt;</button>
+        <div class="slider">
+          <div><img src="./images/ap3.png" alt="Slide 1"></div>
+          <div><img src="./images/ap4.png" alt="Slide 2"></div>
+        </div>
+      </div>
+
+      <!-- Static Square Image Right -->
+      <div class="image-wrapper">
+        <img src="./images/ap3.jpg" alt="Static Square Image" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">thank you for watching</div>
+    <div class="footer-right"><a href="./about me.html">about me</a></div>
+  </footer>
+
+  <!-- jQuery + Slick JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $slider = $('.slider');
+      $slider.slick({
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        infinite: true,
+        speed: 600
+      });
+
+      $('.prev-arrow').click(() => $slider.slick('slickPrev'));
+      $('.next-arrow').click(() => $slider.slick('slickNext'));
+    });
+  </script>
+
+</body>
+</html>

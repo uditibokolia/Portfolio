@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Direction</title>
+
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-banner {
+      height: 60px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 35px;
+      font-size: 12px;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+      background: white;
+      color: red;
+    }
+
+    .logo a {
+      color: red;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 200px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      margin-right: 200px;
+    }
+
+    nav a {
+      color: red;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    .logo a:hover {
+      opacity: 0.6;
+    }
+
+    .main-content-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px; /* Further reduced top/bottom padding */
+      overflow: hidden;
+    }
+
+    .side-rectangles {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .landscape-box {
+      width: 300px;
+      height: 194px;
+      background-color: #f0f0f0;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .landscape-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border: none;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .grid-item {
+      width: 225px;
+      aspect-ratio: 9 / 16;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: none;
+    }
+
+    .grid-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border: none;
+    }
+
+    footer {
+      height: 60px;
+      flex-shrink: 0;
+      background-color: white;
+      color: red;
+      font-size: 12px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      margin-left: 200px;
+    }
+
+    .footer-right {
+      margin-right: 200px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: red;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 1024px) {
+      .main-content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .side-rectangles {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-banner,
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+      }
+
+      .logo,
+      .footer-left,
+      .footer-right,
+      nav {
+        margin: 0;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Banner -->
+  <div class="top-banner">
+    <div class="logo"><a href="portfolio.html">uditi bokolia</a></div>
+    <nav>
+      <a href="./images/textlieportfolio.pdf">textile</a>
+      <a href="projects.html">projects</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content-wrapper">
+
+
+    <!-- Reels Grid -->
+    <div class="grid-container">
+      <div class="grid-item">
+        <video src="./images/A1.mp4" loop></video>
+      </div>
+      <div class="grid-item">
+        <video src="./images/A2.mp4" loop></video>
+      </div>
+    </div>
+      <div class="grid-item">
+        <video src="./images/a4.mp4" loop></video>
+      </div>
+    </div>
+
+
+    
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">thank you for watching</div>
+    <div class="footer-right"><a href="./about me.html">about me</a></div>
+  </footer>
+
+  <!-- Video Play/Pause Script -->
+  <script>
+    const videos = document.querySelectorAll('.grid-item video');
+    videos.forEach(video => {
+      video.addEventListener('click', () => {
+        videos.forEach(v => {
+          if (v !== video) v.pause();
+        });
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

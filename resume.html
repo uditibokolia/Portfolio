@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uditi Bokolia | Resume</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: white;
+      color: black;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .resume {
+      display: grid;
+      grid-template-columns: 25% 50% 25%;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .left, .center, .right {
+      padding: 40px 30px;
+    }
+
+    .left h3, .center h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .left h4, .center h4 {
+      font-size: 1rem;
+      margin: 10px 0 2px;
+      font-weight: 700;
+    }
+
+    .left p, .center p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
+      position: relative;
+    }
+
+    .right .vertical-name {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 8px;
+      white-space: nowrap;
+    }
+
+    .right .title {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .contact, .about {
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .contact a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skills-list div {
+      font-size: 0.85rem;
+    }
+
+    .experience-dates {
+      font-weight: 600;
+      float: right;
+      text-align: right;
+    }
+
+    .job {
+      margin-bottom: 30px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .job-meta {
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
+
+    .job-desc {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume">
+    
+    <!-- LEFT COLUMN -->
+    <div class="left">
+      <div class="section">
+        <h3>Education</h3>
+        <h4>NIFT, New Delhi</h4>
+        <p>Bachelor’s of Design, Undergraduate</p>
+        <p class="experience-dates">2021–2025</p>
+        <h4>Ryan International School</h4>
+        <p>Senior Secondary, Commerce</p>
+        <p class="experience-dates">2021</p>
+      </div>
+
+      <div class="section">
+        <h3>Skills</h3>
+        <div class="skills-list">
+          <div>
+            <p><strong>Concept Creation</strong></p>
+            <p>Research</p>
+            <p>Digital Art / Illustration</p>
+            <p>Print Development</p>
+          </div>
+          <div>
+            <p><strong>3D Creation</strong></p>
+            <p>Fabric Manipulation</p>
+            <p>Sewing</p>
+          </div>
+          <div>
+            <p><strong>Writer / Graphic</strong></p>
+            <p>Video Editing</p>
+            <p>Content Writing</p>
+            <p>Photo Editing</p>
+          </div>
+        </div>
+
+        <br>
+        <h4>Softwares</h4>
+        <div>
+          <p>Photoshop, Illustrator, Indesign</p>
+          <p>Lightroom, Procreate</p>
+          <p>Nomad Sculpt, Canva</p>
+          <p>Adobe After Effects, VN</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div class="center">
+      <div class="section">
+        <h3>Experience</h3>
+
+        <div class="job">
+          <div class="job-title">Jaypore – ABFRL</div>
+          <div class="job-meta">Graduation Project • 2025 JAN – APR</div>
+          <p class="job-desc">Designed two SS26 menswear collections using block printing and urban silhouettes. Contributed to photoshoot and editing.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Divyam Mehta</div>
+          <div class="job-meta">Design Internship • 2024 MAY – JUL</div>
+          <p class="job-desc">Worked on an industry document, a small-scale project, lookbooks, and festive invitation postcards.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Taneira</div>
+          <div class="job-meta">Design Project • 2022 DEC</div>
+          <p class="job-desc">Saree designs using tie-dye and embroidery aimed at contemporary audiences.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-title">TCNS</div>
+          <div class="job-meta">Print Development • 2022 MAR</div>
+          <p class="job-desc">Created a print based on the company’s brief.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Craft Research Documentation</div>
+          <div class="job-meta">Pipli Craft of Odisha • 2023 JUL</div>
+          <p class="job-desc">Documented traditional crafts of Odisha in groups. My focus: Pipli art.</p>
+        </div>
+
+        <div class="job">
+          <div class="job-title">Dream Clues</div>
+          <div class="job-meta">Graphic Designing • 2022 JUN – AUG</div>
+          <p class="job-desc">Worked on portfolios, social media ads, and catalog layouts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+      <div>
+        <div class="vertical-name">UDITI BOKOLIA</div>
+        <div class="title">ARTIST, READER, CREATIVE DIRECTOR, ILLUSTRATOR</div>
+      </div>
+
+      <div>
+        <div class="about">
+          <p>Multidisciplinary creative with a background in textile design and skills in graphic design, video editing, and creative direction. Recent NIFT graduate combining practical knowledge with visual storytelling across fashion and lifestyle.</p>
+          <p>Strong interest in video production – planning, shooting, editing. Passionate about brand identity, visual clarity, and consistency while growing hands-on.</p>
+        </div>
+
+        <div class="contact" style="margin-top: 30px;">
+          <p>uditi20bokolia@gmail.com</p>
+          <p>+91 8826303393</p>
+          <p>Behance: <a href="https://www.behance.net/uditibokolia_" target="_blank">behance.net/uditibokolia_</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/uditi.bokolia/" target="_blank">@uditi.bokolia</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tattoos</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png"   />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: white;
+      color: red;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 35px;
+      width: 100%;
+      font-size: 12px;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+      background: white;
+      margin-top: 10px;
+    }
+
+    .logo a {
+      font-weight: 600;
+      margin-left: 200px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      margin-right: 200px;
+    }
+
+    .main-content-wrapper {
+      background: url('b0.png') no-repeat center center;
+      background-size: cover;
+      padding: 40px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    .grid-item {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+      /* Makes it square */
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.02);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .overlay.active {
+      display: flex;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .overlay-content {
+      position: relative;
+      max-width: 90%;
+      width: 1200px;
+      text-align: center;
+    }
+
+    .overlay-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .close-btn {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: red;
+      cursor: pointer;
+      z-index: 1010;
+      font-weight: bold;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: red;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1010;
+    }
+
+    .arrow-left {
+      left: -60px;
+    }
+
+    .arrow-right {
+      right: -60px;
+    }
+
+    footer {
+      background-color: white;
+      color: red;
+      font-size: 12px;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footer-left {
+      margin-left: 200px;
+    }
+
+    .footer-right {
+      margin-right: 200px;
+    }
+
+    footer a {
+      font-weight: 600;
+    }
+
+    footer a:hover,
+    nav a:hover,
+    .logo a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+
+      .top-banner,
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .logo,
+      .footer-left,
+      .footer-right,
+      nav {
+        margin: 0;
+      }
+
+      .arrow-left,
+      .arrow-right {
+        font-size: 24px;
+        left: 10px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <div class="logo"><a href="portfolio.html">uditi bokolia</a></div>
+    <nav>
+      <a href="./images/textlieportfolio.pdf">textile</a>
+      <a href="projects.html">projects</a>
+    </nav>
+  </div>
+
+  <!-- Main Content Grid -->
+
+
+  <div class="main-content-wrapper">
+    <div class="grid">
+      <div class="grid-item" onclick="openOverlay(0)"><img src="./images/T1.png" alt="Grid Image 1" /></div>
+      <div class="grid-item" onclick="openOverlay(1)"><img src="./images/T2.png" Grid Image 2" /></div>
+      <div class="grid-item" onclick="openOverlay(2)"><img src="./images/T3.png" alt="Grid Image 3" /></div>
+      <div class="grid-item" onclick="openOverlay(3)"><img src="./images/T4.png" alt="Grid Image 4" /></div>
+      <div class="grid-item" onclick="openOverlay(4)"><img src="./images/T5.png" alt="Grid Image 5" /></div>
+      <div class="grid-item" onclick="openOverlay(5)"><img src="./images/T6.png" alt="Grid Image 6" /></div>
+      <div class="grid-item" onclick="openOverlay(6)"><img src="./images/T7.png" alt="Grid Image 7" /></div>
+      <div class="grid-item" onclick="openOverlay(7)"><img src="./images/T8.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(8)"><img src="./images/T9.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(9)"><img src="./images/T10.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(10)"><img src="./images/T11.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(11)"><img src="./images/T12.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(12)"><img src="./images/T13.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(13)"><img src="./images/T14.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(14)"><img src="./images/T15.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(15)"><img src="./images/T16.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(16)"><img src="./images/T17.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(17)"><img src="./images/T18.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(18)"><img src="./images/T19.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(19)"><img src="./images/T20.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(20)"><img src="./images/T21.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(21)"><img src="./images/T22.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(22)"><img src="./images/T23.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(23)"><img src="./images/T24.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(24)"><img src="./images/T25.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(25)"><img src="./images/T26.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(26)"><img src="./images/T27.png" alt="Grid Image 8" /></div>
+      <div class="grid-item" onclick="openOverlay(27)"><img src="./images/T28.png" alt="Grid Image 8" /></div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Overlay -->
+  <div class="overlay" id="imageOverlay">
+    <div class="close-btn" onclick="closeOverlay()">×</div>
+    <div class="overlay-content">
+      <button class="arrow-btn arrow-left" onclick="prevImage()">&#8592;</button>
+      <img id="overlayImage" src="" alt="Expanded View" />
+      <button class="arrow-btn arrow-right" onclick="nextImage()">&#8594;</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">thank you for watching</div>
+    <div class="footer-right"><a href="./about me.html">about me</a></div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const images = [
+      "./images/T1.png", "./images/T2.png", "./images/T3.png", "./images/T4.png",
+      "./images/T5.png", "./images/T6.png", "./images/T7.png", "./images/T8.png",
+      "./images/T9.png", "./images/T10.png", "./images/T11.png", "./images/T12.png",
+      "./images/T13.png", "./images/T14.png", "./images/T15.png", "./images/T16.png",
+      "./images/T17.png", "./images/T18.png", "./images/T19.png", "./images/T20.png",
+      "./images/T21.png", "./images/T22.png", "./images/T23.png", "./images/T24.png",
+      "./images/T25.png", "./images/T26.png", "./images/T27.png", "./images/T28.png",
+    ];
+
+    let currentIndex = 0;
+
+    function openOverlay(index) {
+      currentIndex = index;
+      document.getElementById('overlayImage').src = images[currentIndex];
+      document.getElementById('imageOverlay').classList.add('active');
+    }
+
+    function closeOverlay() {
+      document.getElementById('imageOverlay').classList.remove('active');
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      document.getElementById('overlayImage').src = images[currentIndex];
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('overlayImage').src = images[currentIndex];
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (document.getElementById('imageOverlay').classList.contains('active')) {
+        if (e.key === 'ArrowLeft') prevImage();
+        else if (e.key === 'ArrowRight') nextImage();
+        else if (e.key === 'Escape') closeOverlay();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

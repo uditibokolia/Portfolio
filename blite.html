@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blite</title>
+
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: white;
+            color: red;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .top-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 35px;
+            width: 100%;
+            font-size: 12px;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+            background: white;
+            margin-top: 10px;
+        }
+
+        .logo a {
+            font-weight: 600;
+            margin-left: 200px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            font-weight: 600;
+            margin-right: 200px;
+        }
+
+        .main-content-wrapper {
+            background: url('b0.png') no-repeat center center;
+            background-size: cover;
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.02);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: white;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .overlay.active {
+            display: flex;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .overlay-content {
+            position: relative;
+            max-width: 90%;
+            width: 1200px;
+            text-align: center;
+        }
+
+        .overlay-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: red;
+            cursor: pointer;
+            z-index: 1010;
+            font-weight: bold;
+        }
+
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: red;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1010;
+        }
+
+        .arrow-left {
+            left: -60px;
+        }
+
+        .arrow-right {
+            right: -60px;
+        }
+
+        footer {
+            background-color: white;
+            color: red;
+            font-size: 12px;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .footer-left {
+            margin-left: 200px;
+        }
+
+        .footer-right {
+            margin-right: 200px;
+        }
+
+        footer a {
+            font-weight: 600;
+        }
+
+        footer a:hover,
+        nav a:hover,
+        .logo a:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+
+            .top-banner,
+            footer {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .logo,
+            .footer-left,
+            .footer-right,
+            nav {
+                margin: 0;
+            }
+
+            .arrow-left,
+            .arrow-right {
+                font-size: 24px;
+                left: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="logo"><a href="portfolio.html">uditi bokolia</a></div>
+        <nav>
+            <a href="./images/textlieportfolio.pdf">textile</a>
+            <a href="projects.html">projects</a>
+        </nav>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="main-content-wrapper">
+        <div class="grid">
+            <div class="grid-item" onclick="openOverlay(0)"><img src="./images/b1.png" alt="Grid Image 1" /></div>
+            <div class="grid-item" onclick="openOverlay(1)"><img src="./images/b2.png" alt="Grid Image 2" /></div>
+            <div class="grid-item" onclick="openOverlay(2)"><img src="./images/b3.png" alt="Grid Image 3" /></div>
+            <div class="grid-item" onclick="openOverlay(3)"><img src="./images/b4.png" alt="Grid Image 4" /></div>
+            <div class="grid-item" onclick="openOverlay(4)"><img src="./images/b5.png" alt="Grid Image 5" /></div>
+            <div class="grid-item" onclick="openOverlay(5)"><img src="./images/6.png" alt="Grid Image 6" /></div>
+            <div class="grid-item" onclick="openOverlay(6)"><img src="./images/b7.png" alt="Grid Image 7" /></div>
+            <div class="grid-item" onclick="openOverlay(7)"><img src="./images/b8.png" alt="Grid Image 8" /></div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="imageOverlay">
+        <div class="close-btn" onclick="closeOverlay()">×</div>
+        <div class="overlay-content">
+            <button class="arrow-btn arrow-left" onclick="prevImage()">&#8592;</button>
+            <img id="overlayImage" src="" alt="Expanded View" />
+            <button class="arrow-btn arrow-right" onclick="nextImage()">&#8594;</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">thank you for watching</div>
+        <div class="footer-right"><a href="./about me.html">about me</a></div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const images = [
+            "b1.png", "b2.png", "b3.png", "b4.png",
+            "b5.png", "b6.png", "b7.png", "b8.png"
+        ];
+        let currentIndex = 0;
+
+        function openOverlay(index) {
+            currentIndex = index;
+            document.getElementById('overlayImage').src = images[currentIndex];
+            document.getElementById('imageOverlay').classList.add('active');
+        }
+
+        function closeOverlay() {
+            document.getElementById('imageOverlay').classList.remove('active');
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById('overlayImage').src = images[currentIndex];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('overlayImage').src = images[currentIndex];
+        }
+
+        // Optional: Use arrow keys for navigation
+        document.addEventListener('keydown', function (e) {
+            if (document.getElementById('imageOverlay').classList.contains('active')) {
+                if (e.key === 'ArrowLeft') prevImage();
+                else if (e.key === 'ArrowRight') nextImage();
+                else if (e.key === 'Escape') closeOverlay();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

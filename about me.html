@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Who Am I? — Uditi Bokolia</title>
+
+  <link rel="icon" type="image/png" href="./images/favicon.png"   />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background: #fff;
+      color: #000;
+      overflow: hidden;
+      /* disables scrolling */
+      height: 100vh;
+      /* ensures full viewport height */
+      width: 100vw;
+      /* ensures full viewport width */
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 40px;
+      flex-wrap: wrap;
+      gap: 40px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .container h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+      text-transform: lowercase;
+    }
+
+    .container p {
+      font-size: 0.7rem;
+      line-height: 1.6;
+      margin-bottom: 1em;
+      margin-top: 1rem;
+      text-align: justify;
+      /* justification applied */
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: red;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav a:hover {
+      opacity: 0.6;
+    }
+
+    .image-box {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-left: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .container p {
+        text-align: justify;
+        /* maintain justification on smaller screens */
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      .image-box img {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Left Content -->
+    <div class="container">
+      <h1>who am i?</h1>
+      <p>
+        I’m a multidisciplinary creative with a background in textile design and a growing practice in graphic design,
+        video editing, and creative direction. A recent graduate from NIFT New Delhi, I approach visual storytelling
+        with both a design foundation and a strong sense of narrative, blending craft with contemporary content.
+      </p>
+      <p>
+        In early 2025, I completed a four-month graduation project with Jaypore – ABFRL, where I designed two menswear
+        collections for SS26 rooted in traditional block printing techniques. Beyond design, I also contributed to the
+        shoot direction and photo editing, deepening my interest in visual content creation.
+      </p>
+      <p>
+        I’m especially passionate about video—from ideation and shooting to editing—and enjoy working on projects that
+        explore brand identity and digital storytelling. As a fresher, I’m committed to creating visuals that are clear,
+        consistent, and engaging, while continuously learning through hands-on experience.
+      </p>
+      <div class="nav">
+        <a href="portfolio.html">home</a>
+        <a href="./images/textlieportfolio.pdf">textiles</a>
+        <a href="./images/resume.pdf">resume</a>
+        <a href="Projects.html">projects</a>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="image-box">
+      <img src="./images/IMG_4744.PNG" alt="Uditi Bokolia Portrait" />
+    </div>
+  </div>
+</body>
+
+</html>
